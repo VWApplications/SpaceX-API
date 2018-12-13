@@ -39,7 +39,7 @@ class SpaceX(object):
 
             if option < 1 or option > 5:
                 print("Essa opção não existe, por favor insira uma opção válida.\n")
-                cls.clean(3)
+                cls.__clean(3)
             elif option == 5:
                 cls.__close()
                 break
@@ -52,7 +52,7 @@ class SpaceX(object):
                     cls.__close()
                     break
 
-                cls.clean(1)
+                cls.__clean(1)
 
     @classmethod
     def __show_result(cls, option):
@@ -69,11 +69,13 @@ class SpaceX(object):
             cls.__latest_launch()
         elif option == SpaceX.UPCOMING_LAUNCHES:
             cls.__upcoming_launches()
-        else:
+        elif option == SpaceX.PAST_LAUNCHES:
             cls.__past_launches()
+        else:
+            print("Opção invalida")
 
     @staticmethod
-    def clean(seconds):
+    def __clean(seconds):
         """
         Clean the prompt
         """

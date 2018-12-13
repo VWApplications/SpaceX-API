@@ -28,7 +28,7 @@ class Launch(object):
         :return: string representation of object
         """
 
-        if self.__launch_success:
+        if self.__launch_success is not None:
             return "{0}\n{1}\n{2}\n{3}\n{4}\n{5}\n".format(
                 self.flight_number, self.mission_name, self.rocket,
                 self.launch_year, self.launch_date, self.launch_success

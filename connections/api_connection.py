@@ -76,13 +76,3 @@ class Connect(object):
         """
 
         return self.__response
-
-    @property
-    def request(self):
-        """
-        Get the request
-
-        :return: request
-        """
-
-        return self.__response.request
