@@ -20,12 +20,17 @@ class Connect(object):
         else:
             self.__headers = {'Accept': 'application/json'}
 
-        if params:
-            self.__response = requests.get(url, self.__headers, params=params)
-        else:
-            self.__response = requests.get(url, self.__headers)
+        try:
+            if params:
+                self.__response = requests.get(url, self.__headers, params=params)
+            else:
+                self.__response = requests.get(url, self.__headers)
 
-        self.__result = self.__response.json()
+            self.__result = self.__response.json()
+        except requests.exceptions.RequestException as error:
+            print("Ocorreu um erro na comunicação com a API SpaceX")
+            print(error)
+
 
     @property
     def result(self):

@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Launch(object):
     """
     SpaceX Launch
@@ -64,7 +67,9 @@ class Launch(object):
         :return: lauch date
         """
 
-        return "Data de Lançamento (UTC): {0}".format(self.__launch_date)
+        date = datetime.strptime(self.__launch_date, "%Y-%m-%dT%H:%M:%S.%fZ")
+
+        return "Data de Lançamento (UTC): {0}".format(date.strftime("%d/%m/%Y às %H:%M"))
 
     @property
     def launch_year(self):

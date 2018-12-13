@@ -30,23 +30,29 @@ class SpaceX(object):
             print("4) Lançamentos Passados")    # past launches
             print("5) Sair\n")  # past launches
 
-            option = int(input("Insira uma opção: "))
+            try:
+                option = int(input("Insira uma opção: "))
+            except ValueError:
+                print("Você deve inserir somente números inteiros de preferencia de 1 a 5")
+                option = 0
+
 
             if option < 1 or option > 5:
                 print("Essa opção não existe, por favor insira uma opção válida.\n")
+                cls.clean(3)
             elif option == 5:
                 cls.__close()
                 break
             else:
                 cls.__show_result(option)
 
-                answer = input("Deseja voltar ao menu? (S/N): ")
+                answer = input("Deseja sair da aplicação? (S/N): ")
 
-                if answer.lower().startswith("n"):
+                if answer.lower().startswith("s"):
                     cls.__close()
                     break
 
-            cls.clean()
+                cls.clean(1)
 
     @classmethod
     def __show_result(cls, option):
@@ -55,7 +61,7 @@ class SpaceX(object):
 
         :param option: Option to visualize some datas
         """
-        print("")
+        print()
 
         if option == SpaceX.NEXT_LAUNCH:
             cls.__next_launch()
@@ -67,12 +73,12 @@ class SpaceX(object):
             cls.__past_launches()
 
     @staticmethod
-    def clean():
+    def clean(seconds):
         """
         Clean the prompt
         """
 
-        time.sleep(1)
+        time.sleep(seconds)
 
         if 'win' in sys.platform:
             os.system("cls")
