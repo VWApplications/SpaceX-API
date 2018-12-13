@@ -27,9 +27,8 @@ class Connect(object):
                 self.__response = requests.get(url, self.__headers)
 
             self.__result = self.__response.json()
-        except requests.exceptions.RequestException as error:
+        except requests.exceptions.RequestException:
             print("Ocorreu um erro na comunicação com a API SpaceX")
-            print(error)
 
 
     @property
