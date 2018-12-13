@@ -48,6 +48,23 @@ class SpaceX(object):
 
             cls.clean()
 
+    @classmethod
+    def __show_result(cls, option):
+        """
+        Run a specific option inserted
+
+        :param option: Option to visualize some datas
+        """
+        print("")
+
+        if option == SpaceX.NEXT_LAUNCH:
+            cls.__next_launch()
+        elif option == SpaceX.LATEST_LAUNCH:
+            cls.__latest_launch()
+        elif option == SpaceX.UPCOMING_LAUNCHES:
+            cls.__upcoming_launches()
+        else:
+            cls.__past_launches()
 
     @staticmethod
     def clean():
@@ -70,24 +87,6 @@ class SpaceX(object):
 
         print("Finalizando o programa...")
         time.sleep(1)
-
-    @classmethod
-    def __show_result(cls, option):
-        """
-        Run a specific option inserted
-
-        :param option: Option to visualize some datas
-        """
-        print("")
-
-        if option == SpaceX.NEXT_LAUNCH:
-            cls.__next_launch()
-        elif option == SpaceX.LATEST_LAUNCH:
-            cls.__latest_launch()
-        elif option == SpaceX.UPCOMING_LAUNCHES:
-            cls.__upcoming_launches()
-        else:
-            cls.__past_launches()
 
     @staticmethod
     def __next_launch():
