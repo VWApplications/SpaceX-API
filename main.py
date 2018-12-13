@@ -1,9 +1,12 @@
+from spaceX import SpaceX
+
+
 def main():
     """
     Method of project execution
     """
 
-    print("Olá mundo!")
+    SpaceX.run()
 
 
 if __name__ == '__main__':
