@@ -99,7 +99,7 @@ class SpaceX(object):
     @staticmethod
     def __next_launch():
         """
-        Returns the closest upcoming launch
+        Returns the next launch
         """
 
         connection = Connect("https://api.spacexdata.com/v3/launches/next")
@@ -109,7 +109,7 @@ class SpaceX(object):
     @staticmethod
     def __upcoming_launches():
         """
-        Returns the closest upcoming launch
+        Returns the closest upcoming launches
         """
 
         connection = Connect("https://api.spacexdata.com/v3/launches/upcoming")
@@ -121,7 +121,7 @@ class SpaceX(object):
     @staticmethod
     def __latest_launch():
         """
-        Returns the most recent launch
+        Returns the latest launch
         """
 
         connection = Connect("https://api.spacexdata.com/v3/launches/latest")
@@ -131,7 +131,7 @@ class SpaceX(object):
     @staticmethod
     def __past_launches():
         """
-        Returns the closest upcoming launch
+        Returns the past launches
         """
 
         connection = Connect("https://api.spacexdata.com/v3/launches/past")
