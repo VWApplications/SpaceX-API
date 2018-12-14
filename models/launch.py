@@ -96,7 +96,7 @@ class Launch(object):
         """
         Verify if the launch happened successfully!
 
-        :return: True if happened successfully and False otherwise
+        :return: Success message or Fail message.
         """
 
         if self.__launch_success:

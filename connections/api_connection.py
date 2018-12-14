@@ -6,8 +6,6 @@ from models import Launch
 class Connect(object):
     """
     Connect to api
-
-    http://docs.python-requests.org/pt_BR/latest/index.html
     """
 
     def __init__(self, url, headers=None, params=None):

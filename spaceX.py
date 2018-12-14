@@ -28,7 +28,7 @@ class SpaceX(object):
             print("2) Último Lançamento")       # latest launch
             print("3) Próximos Lançamentos")    # upcoming launches
             print("4) Lançamentos Passados")    # past launches
-            print("5) Sair\n")  # past launches
+            print("5) Sair\n")
 
             try:
                 option = int(input("Insira uma opção: "))
